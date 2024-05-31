@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+  <ion-buttons slot="start">
+  <ion-back-button defaultHref="/profesor-list" text=""></ion-back-button>
+  </ion-buttons>
+  <ion-title>{{ profesorId ? 'Editar Profesor' : 'Nuevo Profesor' }}</ion-title>
+  
+  <ion-buttons slot="primary" (click)="incluirOEditarProfesor()">
+  <ion-button fill="solid">
+  Guardar
+  <ion-icon slot="end" name="checkmark"></ion-icon>
+  </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+  <form [formGroup]="registroForm" class="form">
+  <ion-list>
+  <ion-item disabled="true">
+  <ion-label position="floating">Id #</ion-label>
+  <ion-input formControlName="id" type="text"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+  <ion-label position="floating">Nombre</ion-label>
+  <ion-input formControlName="nombre" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label position="floating">Apellido</ion-label>
+  <ion-input formControlName="apellido" type="text"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+  <ion-label position="floating">Cedula</ion-label>
+  <ion-input formControlName="cedula" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label position="floating">Direccion</ion-label>
+  <ion-input formControlName="direccion" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label position="floating">Telefono</ion-label>
+  <ion-input formControlName="telefono" type="text"></ion-input>
+  </ion-item>
+  </ion-list>
+  </form>
+  </ion-content>
+  
+   
+  

@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  <ion-title>Listado de Profesores</ion-title>
+  </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+  <ion-button [routerLink]="'/profesor-edit'" expand="block"> Nuevo </ion-button>
+  
+  <ion-grid>
+  <ion-row>
+  <ion-col size="2" class="ion-text-center"><b>Nombre</b></ion-col>
+  <ion-col size="2" class="ion-text-center"><b>Apellido</b></ion-col>
+  <ion-col size="2" class="ion-text-center"><b>Cedula</b></ion-col>
+  <ion-col size="2" class="ion-text-center"><b>Direccion</b></ion-col>
+  <ion-col size="2" class="ion-text-center"><b>Telefono</b></ion-col>
+  <ion-col size="2" class="ion-text-center"><b>Acciones</b></ion-col>
+
+  </ion-row>
+  </ion-grid>
+
+  <ion-list>
+  <ion-item *ngFor="let profesor of profesorArray">
+
+  <ion-grid>
+  <ion-row>
+  <ion-col size="2" class="ion-text-center ion-align-self-center">{{ profesor.nombre }}</ion-col>
+  <ion-col size="2" class="ion-text-center ion-align-self-center">{{ profesor.apellido }}</ion-col>
+  <ion-col size="2" class="ion-text-center ion-align-self-center">{{ profesor.cedula }}</ion-col>
+  <ion-col size="2" class="ion-text-center ion-align-self-center">{{ profesor.direccion }}</ion-col>
+  <ion-col size="2" class="ion-text-center ion-align-self-center">{{ profesor.telefono }}</ion-col>
+
+  <ion-col size="2" class="custom-button-container">
+  <ion-button [routerLink]="['/profesor-edit', profesor.id]">
+  <ion-icon name="create"></ion-icon>
+  </ion-button>
+  <ion-button (click)="eliminarProfesor(profesor.id)">
+  <ion-icon name="trash"></ion-icon>
+  </ion-button>
+  </ion-col>
+
+  </ion-row>
+  </ion-grid>
+
+  </ion-item>
+  </ion-list>
+
+  </ion-content>
+  

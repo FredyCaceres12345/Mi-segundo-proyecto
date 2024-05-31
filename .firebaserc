@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lenguajeprgv-392d6": {
+      "hosting": {
+        "app": [
+          "lenguajeprgv-392d6"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lenguajeprgv-392d6"
+  }
+}
